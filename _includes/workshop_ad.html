@@ -26,13 +26,16 @@
           <p>Online</p>
           {% endif %}
           <p>{{page.humandate}}</p>
-          <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
+          <p>{% if page.humantime %}
+          {{page.humantime| join: ', <br>'  %}}
+          {% endif %}</p>
         </div>
         <div class="col-md-6">
           <p>
           <strong>Instructors:</strong>
           {% if page.instructor %}
-          {{page.instructor | join: ', ' %}}
+          <br>&nbsp;
+          {{page.instructor | join: ', <br>&ensp;'  %}}
           {% else %}
           to be announced.
           {% endif %}
